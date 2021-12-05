@@ -1,0 +1,3 @@
+# Project Data pipeline
+
+Imaginary music app company, Spotify, was impressed by my former project that was offered from  them, which was ETL pipeline to their data warehouse(Amazon Redshift) using its data to analyze the usage of the app based on data of song that was played as a fact data and data of various app's attribute as dimensional data to slice the fact data in order to get insight, and they want to continue to hire me. Wanting to polish the great to my workpiece, the following task that they gave was to add automation of the ETL process and ability to monitor and to backfill which means the ability to analyze with past data.
