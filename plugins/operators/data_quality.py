@@ -28,10 +28,12 @@ class DataQualityOperator(BaseOperator):
         self.table = table
 
     def execute(self, context):
+
         self.log.info("Started checking data quality")
         redshift_hook = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         
         errors = []
+        
         for tb in self.table:
             sql_query=DataQualityOperator.check_no_data.format(tb)
             records=redshift_hook.get_records(sql_query)[0]
@@ -41,9 +43,9 @@ class DataQualityOperator(BaseOperator):
             if record < 0:
                 errors.append(tb)
                 
-         if len(errors)>0:
-             for e in errors:
-                 self.log.info(f"Error at {e}")
-                 raise ValueError("Couldn't pass data quality check ")
+        if len(errors) > 0:
+            for e in errors:
+                self.log.info(f"Error at {e}")
+                raise ValueError("Couldn't pass data quality check ")
 
         self.log.info(f"Passed the data quality tests per table")
