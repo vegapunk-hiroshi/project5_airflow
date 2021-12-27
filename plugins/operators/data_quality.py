@@ -37,11 +37,13 @@ class DataQualityOperator(BaseOperator):
             records=redshift_hook.get_records(sql_query)[0]
             record = records[0]
             self.log.info(f"Number of record of {tb} table: {record}")
+
             if record < 0:
                 errors.append(tb)
                 
          if len(errors)>0:
-            for e in errors:
-                self.log.info(f"Error at {e}")
-                raise ValueError("Couldn't pass data quality check ")
+             for e in errors:
+                 self.log.info(f"Error at {e}")
+                 raise ValueError("Couldn't pass data quality check ")
+
         self.log.info(f"Passed the data quality tests per table")
