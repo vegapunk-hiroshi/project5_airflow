@@ -17,22 +17,22 @@ Airflow has very useful and strong features as below.
 ## Datasets
 Here are the S3 links for datasets used in this project:
 
-- Log data: s3://udacity-dend/log_data 
-- Song data: s3://udacity-dend/song_data
+- Log data: `s3://udacity-dend/log_data `
+- Song data: `s3://udacity-dend/song_data`
 
 
 ## Structure of this project
 Here are the descriptions of the files:
 
-- create_tables.sql: SQL create table statements provided with template.
+- `create_tables.py`: SQL create table statements provided with template.
 
-- udac_example_dag.py: Defines main DAG, tasks and link the tasks in required order.
+- `udac_example_dag.py`: Defines main DAG, tasks and link the tasks in required order.
 
-- stage_redshift.py: Defines StageToRedshiftOperator to copy JSON data from S3 to staging tables in the Redshift via copy command.
-- load_dimension.py: Defines LoadDimensionOperator to load a dimension table from staging tables.
-- load_fact.py: Defines LoadFactOperator to load fact table from staging tables.
-- data_quality.py: Defines DataQualityOperator to run data quality checks on all tables passed as parameter.
-- sql_queries.py: Contains SQL queries for the ETL pipeline, provided in template.
+- `stage_redshift.py`: Defines StageToRedshiftOperator to copy JSON data from S3 to staging tables in the Redshift via copy command.
+- `load_dimension.py`: Defines LoadDimensionOperator to load a dimension table from staging tables.
+- `load_fact.py`: Defines LoadFactOperator to load fact table from staging tables.
+- d`ata_quality.py`: Defines DataQualityOperator to run data quality checks on all tables passed as parameter.
+- `sql_queries.py`: Contains SQL queries for the ETL pipeline, provided in template.
 
 
 ## Config
