@@ -31,7 +31,7 @@ Here are the descriptions of the files:
 - `stage_redshift.py`: Defines StageToRedshiftOperator to copy JSON data from S3 to staging tables in the Redshift via copy command.
 - `load_dimension.py`: Defines LoadDimensionOperator to load a dimension table from staging tables.
 - `load_fact.py`: Defines LoadFactOperator to load fact table from staging tables.
-- d`ata_quality.py`: Defines DataQualityOperator to run data quality checks on all tables passed as parameter.
+- `data_quality.py`: Defines DataQualityOperator to run data quality checks on all tables passed as parameter.
 - `sql_queries.py`: Contains SQL queries for the ETL pipeline, provided in template.
 
 
